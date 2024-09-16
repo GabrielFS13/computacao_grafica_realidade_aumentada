@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo com Multi Markers</title>
+
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs>
+        <!-- Primeiro marcador (hiro) -->
+        <a-marker preset="hiro">
+            <!-- Objeto 3D (cubo vermelho) que aparece no marcador Hiro -->
+            <a-box position="0 0.5 0" material="color: red;"></a-box>
+        </a-marker>
+
+        <!-- Segundo marcador (kanji) -->
+        <a-marker preset="kanji">
+        <!-- Entidade com o modelo GLTF -->
+        <a-sphere position="0 0.5 0" radius="0.5" material="color: blue;"></a-sphere>
+
+      </a-marker>
+
+        <!-- Marcador Personalizado 'A' -->
+        <a-marker type="pattern" url="markers/a.patt">
+            <a-cone position="0 0.5 0" radius-bottom="0.5" height="1" material="color: green;"></a-cone>
+        </a-marker>
+
+        <!-- Marcador padrão 'b' -->
+        <a-marker type="pattern" url="markers/b.patt">
+            <!-- Exibe um cubo vermelho no marcador 'b' -->
+            <a-box position="0 0.5 0" material="color: red;"></a-box>
+        </a-marker>
+
+        <!-- Marcador padrão 'c' -->
+        <a-marker type="pattern" url="markers/c.patt">
+            <!-- Exibe uma esfera azul no marcador 'c' -->
+            <a-sphere position="0 0.5 0" radius="0.5" material="color: blue;"></a-sphere>
+        </a-marker>
+
+        <!-- Marcador padrão 'd' -->
+        <a-marker type="pattern" url="markers/d.patt">
+            <!-- Exibe um cone verde no marcador 'e' -->
+            <a-entity
+          obj-model="obj: url(media/obj/Wolf_obj.obj); mtl: url(media/obj/Wolf_obj.mtl)"
+          position="0 0 0"
+          scale="0.5 0.5 0.5"
+          rotation="0 0 0">
+        </a-entity>
+        </a-marker>
+
+        <!-- Marcador padrão 'f' -->
+        <a-marker type="pattern" url="markers/f.patt">
+            <!-- Exibe um cilindro amarelo no marcador 'f' -->
+            <a-cylinder position="0 0.5 0" radius="0.3" height="1" material="color: yellow;"></a-cylinder>
+        </a-marker>
+
+        <!-- Marcador padrão 'g' -->
+        <a-marker type="pattern" url="markers/g.patt">
+            <!-- Exibe um plano rosa no marcador 'g' -->
+            <a-plane position="0 0.5 0" width="1" height="1" material="color: pink;"></a-plane>
+        </a-marker>
+        <!-- Câmera para AR.js -->
+        <a-entity camera></a-entity>
+    </a-scene>
+</body>
+
+</html>
